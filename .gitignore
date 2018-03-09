@@ -1,0 +1,4 @@
+**/*.pyc
+app
+.DS_STORE
+**.egg-info
