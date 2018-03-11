@@ -1,12 +1,11 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from database
+from database.user import User
+from database.session import session
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
-db = SQLAlchemy(app)
 
 @app.route('/users')
 def users():
-	print database
-	return ''
+	arr = []
+	return ','.join(str(instance.__dict__) for instance in session.query(User).order_by(User.id))
+	
